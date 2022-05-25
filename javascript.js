@@ -1,6 +1,7 @@
 let currentColor = '#252422';
 let currSize = 16;
 let currMode = 'color';
+const BASE_COLOR = '#fffcf2'
 
 function createBoxes(lenSide) {
     gridContainer.style.gridTemplateColumns = `repeat(${lenSide}, 1fr)`;
@@ -17,6 +18,10 @@ function createBoxes(lenSide) {
 
 function colorBox(e) {
     if (e.type == 'mouseover' && !mouseDown) return;
+    if (currMode === 'erase') {
+        e.target.style.backgroundColor = BASE_COLOR;
+        return;
+    }
     e.target.style.backgroundColor = currentColor;
 }
 

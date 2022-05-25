@@ -121,10 +121,10 @@ h1 {
     margin: 0;
 }
 
-.grid-box:hover {
+/*.grid-box:hover {
     transform: scale(1.2);
     background-color: #403d39;
-}
+}*/
 
 #footer {
     color: #eb5e28;
