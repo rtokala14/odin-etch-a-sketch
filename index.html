@@ -13,8 +13,22 @@
         <h1>Etch-A-Sketch</h1>
     </div>
     <div id="main">
-        
+        <div class="controls left">
+            <div class="sizeControls">
+                <div id="boxSize">16 x 16</div>
+                <input type="range" min="2" max="100" value="16" class="slider" id="sizeRange">
+            </div>
+            <button id="eraseButton" class="button">Eraser</button>
+            <button id="clearButton" class="button">Clear</button>
+        </div>
         <div id="container"></div>
+        <div class="controls right">
+            <button id="colorButton" class="button">Color</button>
+            <button id="rainButton" class="button">Rainbow</button>
+            <button id="darkButton" class="button">Darker</button>
+            <button id="lightButton" class="button">Lighter</button>
+
+        </div>
     </div>
     <p id="footer">Copyright @ rtokala14</p>
 </body>
