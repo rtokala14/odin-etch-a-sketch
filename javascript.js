@@ -1,4 +1,4 @@
-let currentColor = '#252422';
+let currentColor = 'rgb(37, 36, 34)';
 let currSize = 16;
 let currMode = 'color';
 const BASE_COLOR = '#fffcf2'
@@ -24,6 +24,16 @@ function colorBox(e) {
     }
     if (currMode === 'rain') {
         e.target.style.backgroundColor = randomColor();
+        return;
+    }
+    if (currMode === 'dark') {
+        let oldColor = e.target.style.backgroundColor;
+        e.target.style.backgroundColor = RGB_Linear_Shade(-0.1, oldColor);
+        return;
+    }
+    if (currMode === 'light') {
+        let oldColor = e.target.style.backgroundColor;
+        e.target.style.backgroundColor = RGB_Linear_Shade(0.1, oldColor);
         return;
     }
     e.target.style.backgroundColor = currentColor;
@@ -61,6 +71,11 @@ function randomColor() {
     randomNumber = randomNumber.toString(16);
     let randColor = randomNumber.padStart(6, 0);
     return '#' + randColor;
+}
+
+const RGB_Linear_Shade=(p,c)=>{
+    var i=parseInt,r=Math.round,[a,b,c,d]=c.split(","),P=p<0,t=P?0:255*p,P=P?1+p:1-p;
+    return"rgb"+(d?"a(":"(")+r(i(a[3]=="a"?a.slice(5):a.slice(4))*P+t)+","+r(i(b)*P+t)+","+r(i(c)*P+t)+(d?","+d:")");
 }
 
 
