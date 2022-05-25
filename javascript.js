@@ -22,6 +22,10 @@ function colorBox(e) {
         e.target.style.backgroundColor = BASE_COLOR;
         return;
     }
+    if (currMode === 'rain') {
+        e.target.style.backgroundColor = randomColor();
+        return;
+    }
     e.target.style.backgroundColor = currentColor;
 }
 
@@ -48,6 +52,15 @@ function activateMode(nMode) {
     node = document.querySelector(newId);
     node.classList.add('active');
     currMode = nMode;
+}
+
+function randomColor() {
+    let maxVal = 0xFFFFFF;
+    let randomNumber = Math.random() * maxVal;
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randColor = randomNumber.padStart(6, 0);
+    return '#' + randColor;
 }
 
 
